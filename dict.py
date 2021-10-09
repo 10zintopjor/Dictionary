@@ -7,7 +7,7 @@ cur = con.cursor()
 
 f=open("bo-en.dic","a")
 # The result of a "cursor.execute" can be iterated over by row
-for row in cur.execute('SELECT word text,definition text FROM tben'):
+for row in cur.execute('SELECT word text,definition text FROM tben LIMIT 10'):
     (bo,en) = row
     f.write(bo+" "+en+"\n")
 
